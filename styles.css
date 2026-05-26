@@ -172,9 +172,20 @@ body {
     font-weight: bold;
     color: white;
 }
-.upstream { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/600x400/0f2a4a/ffffff?text=Upstream+Asset') center/cover; }
-.midstream { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/600x400/11161b/ffffff?text=Midstream+Logistics') center/cover; }
-.renewables { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/600x400/1e6b43/ffffff?text=Renewables') center/cover; }
+.upstream { 
+    background: linear-gradient(rgba(15, 42, 74, 0.45), rgba(15, 42, 74, 0.7)), 
+    url('https://images.unsplash.com/photo-1544654803-b69140b285a1?q=80&w=1200&auto=format&fit=crop') center/cover; 
+}
+
+.midstream { 
+    background: linear-gradient(rgba(15, 42, 74, 0.45), rgba(15, 42, 74, 0.7)), 
+    url('https://images.unsplash.com/photo-1513828583835-c339738e6020?q=80&w=1200&auto=format&fit=crop') center/cover; 
+}
+
+.renewables { 
+    background: linear-gradient(rgba(15, 42, 74, 0.45), rgba(15, 42, 74, 0.7)), 
+    url('https://images.unsplash.com/photo-1509391366360-2e959784a276?q=80&w=1200&auto=format&fit=crop') center/cover; 
+}
 
 .op-info { padding: 30px; }
 .op-info h3 { color: var(--primary); margin-bottom: 12px; }
