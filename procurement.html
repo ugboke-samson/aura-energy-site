@@ -2,22 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Subcontractor Tenders | RAYTON</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procurement Tenders & Subcontracting Registry | RAYTON</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header class="main-header"><div class="container row"><div class="logo"><h2>RAYTON<span>CONSTRUCTION</span></h2></div><nav class="nav-menu"><a href="index.html">Home</a><a href="capabilities.html">Capabilities</a><a href="portfolio.html">Our Portfolio</a><a href="procurement.html" class="active">Tenders & Bidding</a></nav></div></header>
-    
-    <section class="subpage-header"><div class="container"><h1>Subcontractor Tender Platform</h1></div></section>
+    <header class="pcl-navbar">
+        <div class="pcl-container row">
+            <div class="pcl-brand"><img src="mylogo.png" alt="RAYTON GROUP Logo" class="pcl-custom-logo"></div>
+            <nav class="pcl-nav-links">
+                <a href="index.html">Home</a>
+                <a href="cap-civil.html">Our Expertise</a>
+                <a href="portfolio.html">Featured Work</a>
+                <a href="sustainability.html">Sustainability</a>
+                <a href="procurement.html" class="active pcl-btn-accent">Tenders & Subcontracting</a>
+            </nav>
+        </div>
+    </header>
 
-    <section class="spec-container"><div class="container">
-        <table class="tender-table">
-            <thead><tr><th>Reference ID</th><th>Project Scope</th><th>Job Location</th><th>Status</th></tr></thead>
-            <tbody>
-                <tr><td>RT-2026-ST-991</td><td><strong>Structural Carbon Rebar Supply</strong></td><td>Metro Transit Center</td><td><span class="status-pill">Open</span></td></tr>
-                <tr><td>RT-2026-EL-402</td><td><strong>Central HVAC System Automation</strong></td><td>RAYTON Tower</td><td><span class="status-pill">Open</span></td></tr>
-            </tbody>
-        </table>
-    </div></section>
+    <section class="pcl-subpage-hero"><div class="pcl-container"><h1>Vendor Procurement Hub</h1></div></section>
+
+    <section class="pcl-workspace">
+        <div class="pcl-container">
+            <div class="pcl-audit-panel">
+                <h2>Subcontractor Pre-Qualification Dossier</h2>
+                <p>Register your firm directly below to gain immediate access to active industrial material bids and project site sub-tenders.</p>
+                
+                <form action="#" method="POST" class="form-grid">
+                    <div class="form-group">
+                        <label for="comp-name">Legal Entity Name</label>
+                        <input type="text" id="comp-name" required placeholder="e.g., Global Aggregate Logistics Ltd">
+                    </div>
+                    <div class="form-group">
+                        <label for="tax-id">Tax Identification ID</label>
+                        <input type="text" id="tax-id" required placeholder="e.g., RC-98765432">
+                    </div>
+                    <div class="form-group">
+                        <label for="division">Primary Operating Division</label>
+                        <select id="division" required>
+                            <option value="">Select Division Spec...</option>
+                            <option value="civil">Heavy Structural Concrete</option>
+                            <option value="steel">Mechanical Steel Framing</option>
+                            <option value="logistics">Haulage & Fleet Supply</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="insurance">Liability Insurance Cap Value</label>
+                        <select id="insurance" required>
+                            <option value="2m">$2,000,000 Minimum Cap</option>
+                            <option value="5m">$5,000,000 Standard Tier</option>
+                        </select>
+                    </div>
+                    <div class="form-group full-width">
+                        <label for="fleet-desc">Equipment Inventory & Certifications Summary</label>
+                        <textarea id="fleet-desc" rows="4" placeholder="Detail your heavy asset availability, safety tracks, and compliance history..."></textarea>
+                    </div>
+                    <div class="form-group full-width" style="margin-top: 12px;">
+                        <button type="submit" class="pcl-btn-fill" style="width: fit-content;">Submit Dossier <i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

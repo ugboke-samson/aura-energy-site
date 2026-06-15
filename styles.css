@@ -1,187 +1,355 @@
 /* ==========================================================================
-   OFFICIAL PCL DESIGN SYSTEM CODES - HIGH CONTRAST INDUSTRIAL ARCHITECTURE
+   RAYTON MASTER ENTERPRISE STYLESHEET (PURPLE INDUSTRIAL LUXE THEME)
    ========================================================================== */
+
 :root {
-    --pcl-dark: #11141A;      /* PCL Midnight Charcoal Obsidian Black */
-    --pcl-panel: #1A1F26;     /* Dark Charcoal Component Card Fills */
-    --pcl-yellow: #FFC627;    /* PCL Neon Amber Yellow (The Signature Focus Accent) */
-    --pcl-white: #FFFFFF;
-    --pcl-light: #F4F6F9;     /* Light Corporate Structural Background */
-    --pcl-gray: #718096;      /* Subdued Text Palette */
-    --pcl-font: "Helvetica Neue", Arial, sans-serif;
+    --brand-primary: #120D1A;     /* Ultra-Dark Plum/Black Base */
+    --brand-accent: #6C3FB8;      /* Premium Purple (Matched to Logo) */
+    --brand-accent-light: #EFE9F8;/* Soft Purple Tint for Cards */
+    --text-dark: #1F1B24;         /* Charcoal Plum Body Text */
+    --text-light: #F8F6FC;        /* Light Tint Backgrounds */
+    --border-color: #E2DCED;      /* Purple-Tinted Divider lines */
+    --card-bg: #FFFFFF;
+    --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: var(--pcl-font); background: var(--pcl-white); color: var(--pcl-dark); -webkit-font-smoothing: antialiased; }
-.pcl-container { width: 92%; max-width: 1280px; margin: 0 auto; }
-.row { display: flex; justify-content: space-between; align-items: center; }
-.pcl-grid { display: grid; gap: 40px; }
-.pcl-grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
-.pcl-grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* PCL Top Banner */
-.pcl-utility-strip { background-color: #0B0D11; color: var(--pcl-gray); font-size: 0.8rem; padding: 10px 0; font-weight: 500; border-bottom: 1px solid rgba(255,255,255,0.04); }
-.strip-links a { color: var(--pcl-gray); text-decoration: none; margin-left: 25px; transition: color 0.2s; }
-.strip-links a:hover { color: var(--pcl-yellow); }
+body {
+    background-color: #F9F8FC;
+    color: var(--text-dark);
+    line-height: 1.6;
+}
 
-/* PCL Premium Nav Bar Setup */
-.pcl-navbar { background-color: var(--pcl-dark); position: sticky; top: 0; z-index: 1000; padding: 24px 0; border-bottom: 4px solid var(--pcl-yellow); }
-.pcl-brand h2 { color: var(--pcl-white); font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; }
-.pcl-brand h2 span { color: var(--pcl-yellow); font-weight: 400; margin-left: 4px; }
-.pcl-nav-links a { color: var(--pcl-white); text-decoration: none; margin-left: 35px; font-weight: 700; font-size: 0.95rem; text-transform: uppercase; letter-spacing: 0.5px; transition: color 0.2s; }
-.pcl-nav-links a:hover, .pcl-nav-links a.active { color: var(--pcl-yellow); }
-.pcl-nav-links a.pcl-btn-accent { background: var(--pcl-yellow); color: var(--pcl-dark); padding: 10px 20px; border-radius: 2px; font-weight: 800; border-bottom: none; }
-.pcl-nav-links a.pcl-btn-accent:hover { background: var(--pcl-white); color: var(--pcl-dark); }
+/* Base Structural Layout Elements */
+.pcl-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
 
-/* PCL Immersive Fullscreen Hero Module */
-.pcl-stage-hero { 
-    position: relative; 
-    padding: 180px 0; 
-    min-height: 85vh; 
-    display: flex; 
+.row {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    background: url('hero-bg.jpg') center/cover no-repeat;
 }
-.pcl-stage-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(17, 20, 26, 0.78); z-index: 1; }
-.pcl-stage-content { position: relative; z-index: 2; color: var(--pcl-white); }
-.pcl-badge-line { display: inline-block; color: var(--pcl-yellow); font-weight: 800; text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 20px; }
-.pcl-stage-content h1 { font-size: 4.2rem; font-weight: 900; text-transform: uppercase; line-height: 1.05; letter-spacing: -1.5px; margin-bottom: 25px; }
-.pcl-stage-content p { font-size: 1.3rem; line-height: 1.6; color: #E2E8F0; max-width: 800px; margin-bottom: 45px; font-weight: 300; }
 
-/* PCL Custom Action Buttons */
-.pcl-btn-fill { background-color: var(--pcl-yellow); color: var(--pcl-dark); padding: 16px 36px; font-weight: 800; text-transform: uppercase; text-decoration: none; display: inline-block; letter-spacing: 1px; font-size: 0.9rem; transition: all 0.3s ease; border-radius: 2px; border: none; cursor: pointer; }
-.pcl-btn-fill i { margin-left: 10px; font-size: 0.8rem; }
-.pcl-btn-fill:hover { background-color: var(--pcl-dark); color: var(--pcl-white); box-shadow: 0 0 0 2px var(--pcl-yellow); }
-.pcl-btn-fill.small-btn { padding: 12px 24px; font-size: 0.8rem; margin-top: 15px; }
-.pcl-btn-outline { border: 2px solid var(--pcl-white); color: var(--pcl-white); padding: 14px 36px; font-weight: 800; text-transform: uppercase; text-decoration: none; display: inline-block; letter-spacing: 1px; font-size: 0.9rem; margin-left: 20px; transition: all 0.3s ease; border-radius: 2px; }
-.pcl-btn-outline:hover { background-color: var(--pcl-white); color: var(--pcl-dark); }
+/* System Grids */
+.pcl-grid { display: grid; gap: 24px; }
+.pcl-grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.pcl-grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-/* PCL High-Contrast Metric Dashboard Panel */
-.pcl-matrix-section { background-color: var(--pcl-dark); padding: 90px 0; color: var(--pcl-white); border-bottom: 1px solid rgba(255,255,255,0.05); }
-.matrix-headline { margin-bottom: 50px; }
-.matrix-headline h3 { font-size: 2.2rem; font-weight: 900; text-transform: uppercase; letter-spacing: -0.5px; }
-.matrix-headline p { color: var(--pcl-gray); font-size: 1.05rem; margin-top: 5px; }
-.pcl-matrix-card { background-color: var(--pcl-panel); padding: 40px 30px; text-decoration: none; display: block; border-left: 4px solid var(--pcl-yellow); transition: all 0.25s ease; }
-.pcl-matrix-card:hover { background-color: #232A33; transform: translateY(-4px); }
-.card-num { display: block; font-size: 3.2rem; font-weight: 900; color: var(--pcl-yellow); line-height: 1; margin-bottom: 15px; }
-.card-lbl { display: block; font-size: 0.9rem; font-weight: 700; color: var(--pcl-white); text-transform: uppercase; letter-spacing: 0.5px; }
-.card-lbl i { font-size: 0.75rem; margin-left: 5px; color: var(--pcl-gray); }
+/* Reusable Action Buttons */
+.pcl-btn-fill {
+    background-color: var(--brand-accent);
+    color: #FFFFFF;
+    padding: 14px 28px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: var(--transition-smooth);
+    border: none;
+}
+.pcl-btn-fill:hover {
+    background-color: #FFFFFF;
+    color: var(--brand-primary);
+    box-shadow: 0 6px 20px rgba(108, 63, 184, 0.2);
+}
+
+.pcl-btn-outline {
+    border: 2px solid #FFFFFF;
+    color: #FFFFFF;
+    padding: 12px 26px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: var(--transition-smooth);
+}
+.pcl-btn-outline:hover {
+    background-color: #FFFFFF;
+    color: var(--brand-accent);
+}
+
+.pcl-btn-accent {
+    border: 2px solid var(--brand-accent) !important;
+    color: var(--brand-accent) !important;
+    padding: 8px 18px !important;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+.pcl-btn-accent:hover {
+    background-color: var(--brand-accent) !important;
+    color: #FFFFFF !important;
+}
 
 /* ==========================================================================
-   NEW: ELITE IN-PAGE TAB DISPLAY SYSTEM COMPONENT STYLES
+   NAVIGATION & UTILITY HEADER
    ========================================================================== */
-.pcl-tabs-section { padding: 100px 0; background-color: var(--pcl-white); }
-.pcl-section-title { margin-bottom: 45px; }
-.pcl-section-title h2 { font-size: 2.6rem; font-weight: 900; text-transform: uppercase; color: var(--pcl-dark); letter-spacing: -1px; }
-.pcl-section-title p { color: var(--pcl-gray); font-size: 1.1rem; max-width: 800px; margin-top: 10px; }
-.accent-bar { width: 80px; height: 5px; background-color: var(--pcl-yellow); margin-top: 15px; }
+.pcl-utility-strip {
+    background-color: #1A1524;
+    color: #B4AEC0;
+    font-size: 0.75rem;
+    padding: 10px 0;
+    border-bottom: 1px solid #282233;
+}
+.strip-ticker i { color: var(--brand-accent); margin-right: 6px; }
+.strip-links a {
+    color: #B4AEC0;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: var(--transition-smooth);
+}
+.strip-links a:hover { color: #FFFFFF; }
 
-/* The horizontal structural button line */
-.pcl-tab-navigation-strip { 
-    display: flex; 
-    border-bottom: 3px solid #E2E8F0; 
-    margin-bottom: 45px;
-    gap: 5px;
+.pcl-navbar {
+    background-color: var(--brand-primary);
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 3px solid #1A1524;
 }
-.tab-control-btn { 
-    background: none; 
-    border: none; 
-    padding: 18px 30px; 
-    font-size: 1rem; 
-    font-weight: 800; 
-    text-transform: uppercase; 
-    color: var(--pcl-gray); 
-    cursor: pointer; 
-    transition: all 0.3s ease; 
-    position: relative;
-    letter-spacing: 0.5px;
-}
-.tab-control-btn i { margin-right: 10px; font-size: 1.1rem; }
-.tab-control-btn:hover { color: var(--pcl-dark); background-color: var(--pcl-light); }
-
-/* The active state: colors the text dark and adds the PCL yellow bar directly underneath */
-.tab-control-btn.active { 
-    color: var(--pcl-dark); 
-}
-.tab-control-btn.active::after { 
-    content: ''; 
-    position: absolute; 
-    bottom: -3px; left: 0; 
-    width: 100%; height: 4px; 
-    background-color: var(--pcl-dark); 
-}
-
-/* Tab Content Display Modules */
-.pcl-tab-content-panel { 
-    display: none; /* Hidden completely by default */
-    animation: fadeFrameIn 0.4s ease-out forwards;
-}
-.pcl-tab-content-panel.active { 
-    display: block; /* Switches on smoothly when toggle is pressed */
-}
-
-/* Inner Layout Container Grid */
-.tab-layout-grid { 
-    display: grid; 
-    grid-template-columns: 1fr 1fr; 
-    gap: 50px; 
-    background-color: #FAFBFD;
-    border: 1px solid #E2E8F0;
-    padding: 40px;
-}
-.tab-visual-showcase { 
-    height: 350px; 
-    position: relative; 
-}
-/* Individual high-end backgrounds loaded contextually into tabs */
-.civic-bg { background: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=700') center/cover; }
-.commercial-bg { background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=700') center/cover; }
-.industrial-bg { background: url('https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=700') center/cover; }
-
-.visual-tint-shield { 
-    position: absolute; top:0; left:0; width:100%; height:100%; 
-    background: linear-gradient(to top, rgba(17,20,26,0.9) 0%, rgba(17,20,26,0.2) 100%); 
-    padding: 35px; display: flex; flex-direction: column; justify-content: flex-end;
-}
-.panel-tag { color: var(--pcl-yellow); font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 8px; }
-.visual-tint-shield h3 { color: var(--pcl-white); font-size: 1.6rem; font-weight: 900; text-transform: uppercase; line-height: 1.2; }
-
-.tab-data-profile { display: flex; flex-direction: column; justify-content: center; }
-.tab-data-profile h3 { font-size: 1.8rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; letter-spacing: -0.5px; }
-.tab-data-profile p { color: #4A5568; font-size: 1.05rem; line-height: 1.65; margin-bottom: 30px; }
-
-/* Segmented Sub-Matrix Metrics Inside Tabs */
-.tab-matrix-stats { 
-    display: flex; 
-    gap: 40px; 
-    margin-bottom: 30px; 
-    border-top: 1px solid #E2E8F0; 
-    padding-top: 20px;
-}
-.matrix-stat-item strong { display: block; font-size: 1.8rem; font-weight: 900; color: var(--pcl-dark); line-height: 1; }
-.matrix-stat-item small { display: block; font-size: 0.8rem; font-weight: 700; color: var(--pcl-gray); text-transform: uppercase; margin-top: 5px; letter-spacing: 0.5px; }
-
-/* Entry Keyframe Micro-Animation */
-@keyframes fadeFrameIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* PCL Deep Charcoal Heavy Corporate Footer Grid */
-.pcl-footer { background-color: #0B0D11; color: var(--pcl-white); padding: 90px 0 60px; border-top: 5px solid var(--pcl-dark); }
-.pcl-footer h3 { font-size: 1.6rem; font-weight: 900; letter-spacing: 1px; margin-bottom: 25px; }
-.pcl-footer h4 { color: var(--pcl-yellow); font-size: 1rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 25px; }
-.pcl-footer a { color: var(--pcl-gray); text-decoration: none; display: block; margin-bottom: 14px; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
-.pcl-footer a:hover { color: var(--pcl-white); }
-.pcl-footer p { color: var(--pcl-gray); font-size: 0.95rem; line-height: 1.6; }
-.contact-email { color: var(--pcl-yellow) !important; font-weight: 700; margin-top: 15px; }
-.pcl-footer-base { background-color: #07080A; color: rgba(255,255,255,0.25); padding: 25px 0; font-size: 0.85rem; font-weight: 500; border-top: 1px solid rgba(255,255,255,0.03); }
-.footer-socials a { color: var(--pcl-gray); font-size: 1.1rem; margin-left: 25px; transition: color 0.2s; }
-.footer-socials a:hover { color: var(--pcl-yellow); }
-/* Custom Logo Positioning Sizer */
+.pcl-brand { display: flex; align-items: center; }
 .pcl-custom-logo {
-    max-height: 42px;    /* Perfectly scales the image to match PCL's navbar layout */
-    width: auto;         /* Prevents your logo graphic from stretching sideways */
+    max-height: 55px;          /* Increased slightly so the inner crest detail stands out beautifully */
+    width: auto;               /* Prevents stretching or warping your graphic layout */
     display: block;
     object-fit: contain;
+    
+    /* THE FIX: Blends out the white background pixels automatically from your PNG */
+    mix-blend-mode: screen;    
+    filter: brightness(1.2) contrast(1.1); /* Sharpens the silver and purple crest details against the dark bar */
+}
+.pcl-nav-links { display: flex; align-items: center; gap: 32px; }
+.pcl-nav-links a {
+    color: #E6E2ED;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    transition: var(--transition-smooth);
+}
+.pcl-nav-links a:hover, .pcl-nav-links a.active {
+    color: var(--brand-accent);
+}
+
+/* ==========================================================================
+   HERO SEGMENTS & BILLBOARDS
+   ========================================================================== */
+.pcl-stage-hero {
+    position: relative;
+    background: url('hero-bg.jpg') no-repeat center center/cover;
+    padding: 180px 0;
+    color: #FFFFFF;
+}
+.pcl-stage-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(18, 13, 26, 0.95), rgba(18, 13, 26, 0.6));
+}
+.pcl-stage-content { position: relative; z-index: 10; max-width: 850px; }
+.pcl-badge-line {
+    color: var(--brand-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 16px;
+}
+.pcl-stage-content h1 { font-size: 3.8rem; line-height: 1.1; margin-bottom: 24px; font-weight: 800; }
+.pcl-stage-content p { font-size: 1.2rem; color: #D3CBDC; margin-bottom: 36px; }
+.pcl-hero-actions { display: flex; gap: 16px; }
+
+/* Subpage Hero Standard */
+.pcl-subpage-hero {
+    background: linear-gradient(135deg, #120D1A 0%, #251F30 100%);
+    color: #FFFFFF;
+    padding: 60px 0;
+    border-bottom: 4px solid var(--brand-accent);
+}
+.pcl-subpage-hero h1 {
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+/* ==========================================================================
+   METRICS MATRIX & CARD LAYOUTS
+   ========================================================================== */
+.pcl-matrix-section { padding: 60px 0; background: #FFFFFF; }
+.matrix-headline h3 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 6px; }
+.matrix-headline p { color: #787180; margin-bottom: 32px; }
+
+.pcl-matrix-card {
+    background: #F6F4FA;
+    padding: 24px;
+    border-left: 4px solid var(--brand-primary);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+.pcl-matrix-card:hover {
+    border-left-color: var(--brand-accent);
+    background: #FFFFFF;
+    box-shadow: 0 12px 24px rgba(108, 63, 184, 0.08);
+    transform: translateY(-2px);
+}
+.card-num { font-size: 2.6rem; font-weight: 800; color: var(--brand-accent); display: block; }
+.card-lbl { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #696273; display: flex; justify-content: space-between; align-items: center; }
+
+/* ==========================================================================
+   TAB PLATFORM INTERFACES
+   ========================================================================== */
+.pcl-tabs-section { padding: 80px 0; }
+.pcl-section-title h2 { font-size: 2.2rem; text-transform: uppercase; font-weight: 800; }
+.pcl-section-title p { color: #71697A; margin-top: 4px; }
+.accent-bar { width: 60px; height: 5px; background-color: var(--brand-accent); margin: 16px 0 32px 0; }
+
+.pcl-tab-navigation-strip { display: flex; gap: 4px; background: #E4DFEC; padding: 4px; margin-bottom: 32px; }
+.tab-control-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 18px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    color: #554E5C;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.tab-control-btn.active, .tab-control-btn:hover {
+    background: var(--brand-primary);
+    color: #FFFFFF;
+}
+.tab-control-btn.active i { color: var(--brand-accent); }
+
+.pcl-tab-content-panel { display: none; }
+.pcl-tab-content-panel.active { display: block; }
+
+.tab-layout-grid { display: grid; grid-template-columns: 1fr 1fr; background: #FFFFFF; box-shadow: 0 12px 30px rgba(0,0,0,0.04); min-height: 380px; }
+.tab-visual-showcase { position: relative; background-size: cover !important; background-position: center !important; }
+
+/* Placeholder graphics for portfolio items */
+.civic-bg { background: url('https://images.unsplash.com/photo-1545558014-868c57f922d3?auto=format&fit=crop&w=800&q=80'); }
+.commercial-bg { background: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'); }
+.industrial-bg { background: url('https://images.unsplash.com/photo-1513828583835-c541714b56f5?auto=format&fit=crop&w=800&q=80'); }
+
+.visual-tint-shield { position: absolute; width:100%; height:100%; top:0; left:0; background: rgba(18, 13, 26, 0.6); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; color: #FFFFFF; }
+.panel-tag { color: var(--brand-accent); text-transform: uppercase; font-size: 0.75rem; font-weight: 700; margin-bottom: 6px; }
+.visual-tint-shield h3 { font-size: 1.5rem; font-weight: 700; text-transform: uppercase; }
+
+.tab-data-profile { padding: 48px; display: flex; flex-direction: column; justify-content: center; }
+.tab-data-profile h3 { font-size: 1.7rem; text-transform: uppercase; margin-bottom: 16px; font-weight: 800; }
+.tab-matrix-stats { display: flex; gap: 48px; margin: 24px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 20px 0; }
+.matrix-stat-item strong { font-size: 1.6rem; color: var(--brand-accent); display: block; font-weight: 800; }
+.matrix-stat-item small { color: #71697A; text-transform: uppercase; font-weight: 600; font-size: 0.75rem; }
+.small-btn { align-self: flex-start; padding: 10px 20px; font-size: 0.8rem; }
+
+/* ==========================================================================
+   CAPABILITIES & CORE WORKING DIRECTORIES
+   ========================================================================== */
+.spec-container { padding: 60px 0; }
+.spec-box { background: #FFFFFF; border-top: 4px solid var(--brand-accent); padding: 48px; box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+.spec-box h2 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 12px; }
+.spec-box p { color: #514A57; font-size: 1.05rem; margin-bottom: 36px; max-width: 800px; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.spec-item { background: #F6F4FA; padding: 28px; border: 1px solid var(--border-color); transition: var(--transition-smooth); }
+.spec-item:hover { border-color: var(--brand-accent); background: #FFFFFF; transform: translateY(-2px); }
+.spec-item h4 { font-size: 1.15rem; text-transform: uppercase; margin-bottom: 10px; color: var(--brand-primary); font-weight: 700; border-bottom: 2px solid var(--brand-accent); width: fit-content; padding-bottom: 4px; }
+.spec-item p { font-size: 0.95rem; color: #514A57; line-height: 1.5; margin-bottom: 0; }
+
+/* ==========================================================================
+   AUDIT LOGS WORKSPACE LAYOUT
+   ========================================================================== */
+.pcl-workspace { padding: 60px 0; }
+.pcl-workspace-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 32px; align-items: start; }
+
+.pcl-audit-panel { background: #FFFFFF; padding: 48px; border-left: 6px solid var(--brand-accent); box-shadow: 0 4px 20px rgba(0,0,0,0.02); }
+.pcl-audit-panel h2 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 12px; }
+.pcl-audit-panel p { color: #514A57; margin-bottom: 32px; font-size: 1.05rem; }
+
+.pcl-node-stack { display: flex; flex-direction: column; gap: 20px; }
+.pcl-node { background: #F6F4FA; padding: 24px; border: 1px solid var(--border-color); }
+.pcl-node h4 { font-size: 1.2rem; color: var(--brand-accent); text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+.pcl-node p { margin-bottom: 0; font-size: 0.95rem; color: #514A57; }
+
+.pcl-sidebar-widget { background: var(--brand-primary); color: #FFFFFF; padding: 32px; border-top: 4px solid var(--brand-accent); }
+.pcl-sidebar-widget h3 { font-size: 1.1rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; color: #FFFFFF; font-weight: 700; }
+.pcl-sidebar-widget ul { list-style: none; }
+.pcl-sidebar-widget ul li { margin-bottom: 14px; display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 0.95rem; color: #E6E2ED; }
+.pcl-sidebar-widget ul li i { color: var(--brand-accent); }
+
+.portfolio-item { background: #FFFFFF; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: var(--transition-smooth); }
+.portfolio-item:hover { transform: translateY(-5px); }
+.portfolio-img { width: 100%; height: 240px; object-fit: cover; }
+.portfolio-meta { padding: 24px; }
+.portfolio-meta .tag { background: var(--brand-accent); color: #FFFFFF; font-size: 0.75rem; padding: 4px 10px; text-transform: uppercase; font-weight: 700; display: inline-block; margin-bottom: 12px; }
+.portfolio-meta h3 { font-size: 1.25rem; margin-bottom: 8px; text-transform: uppercase; }
+.portfolio-meta p { color: #514A57; font-size: 0.95rem; }
+.portfolio-specs { display: flex; justify-content: space-between; border-top: 1px solid var(--border-color); margin-top: 16px; padding-top: 12px; font-size: 0.85rem; color: #71697A; }
+
+/* Forms Framework for Procurement */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full-width { grid-column: span 2; }
+.form-group label { font-weight: 700; font-size: 0.85rem; text-transform: uppercase; color: #514A57; }
+.form-group input, .form-group select, .form-group textarea {
+    padding: 12px;
+    border: 2px solid #CBD5E0;
+    background: #F6F4FA;
+    font-size: 1rem;
+    transition: var(--transition-smooth);
+}
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+    border-color: var(--brand-accent);
+    background: #FFFFFF;
+    outline: none;
+}
+
+/* ==========================================================================
+   HEAVY INDUSTRIAL FOOTER SYSTEM
+   ========================================================================== */
+.pcl-footer { background-color: #0F0B14; color: #A49FB0; padding: 80px 0 0 0; font-size: 0.9rem; border-top: 6px solid #1A1524; }
+.pcl-footer h3 { color: #FFFFFF; font-weight: 800; margin-bottom: 16px; letter-spacing: 1px; }
+.pcl-footer h4 { color: #FFFFFF; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1.5px; margin-bottom: 20px; }
+.footer-links-col a { color: #A49FB0; text-decoration: none; display: block; margin-bottom: 10px; transition: var(--transition-smooth); }
+.footer-links-col a:hover { color: var(--brand-accent); padding-left: 4px; }
+.contact-email { color: #FFFFFF; font-weight: 700; margin-top: 12px; }
+.pcl-footer-base { background: #0A070F; padding: 24px 0; margin-top: 60px; font-size: 0.8rem; border-top: 1px solid #1A1622; }
+.footer-socials a { color: #A49FB0; margin-left: 16px; font-size: 1.1rem; transition: var(--transition-smooth); }
+.footer-socials a:hover { color: var(--brand-accent); }
+
+/* Mobile Adaptations */
+@media (max-width: 992px) {
+    .pcl-workspace-grid { grid-template-columns: 1fr; }
+    .tab-layout-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+    .row { flex-direction: column; gap: 16px; text-align: center; }
+    .pcl-nav-links { flex-wrap: wrap; justify-content: center; gap: 16px; }
+    .pcl-stage-content h1 { font-size: 2.4rem; }
 }
