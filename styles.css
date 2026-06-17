@@ -1,15 +1,15 @@
 /* ==========================================================================
-   RAYTON MASTER ENTERPRISE STYLESHEET (PURPLE INDUSTRIAL LUXE THEME)
+   RAYTON INTERNATIONAL DIGITAL DESIGN FRAMEWORK - MASTER PURPLE EXECUTIVE EDIT
    ========================================================================== */
 
 :root {
-    --brand-primary: #120D1A;     /* Ultra-Dark Plum/Black Base */
-    --brand-accent: #6C3FB8;      /* Premium Purple (Matched to Logo) */
-    --brand-accent-light: #EFE9F8;/* Soft Purple Tint for Cards */
-    --text-dark: #1F1B24;         /* Charcoal Plum Body Text */
-    --text-light: #F8F6FC;        /* Light Tint Backgrounds */
-    --border-color: #E2DCED;      /* Purple-Tinted Divider lines */
-    --card-bg: #FFFFFF;
+    --bg-deep: #09060E;           /* Cinematic Cyber-Plum Obsidian */
+    --panel-dark: #120C1C;        /* Deep Premium Container Purple Base */
+    --brand-accent: #6C3FB8;      /* Vibrant Regal Purple (Matched to Logo) */
+    --brand-glow: rgba(108, 63, 184, 0.2);
+    --text-pure: #F4F0FA;         /* High-Contrast Crystal White */
+    --text-muted: #9E94B0;        /* Silver-Plum Technical Secondary text */
+    --border-clean: #251B33;      /* Crisp Purple Structural Grid Trim */
     --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
@@ -17,19 +17,20 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
 body {
-    background-color: #F9F8FC;
-    color: var(--text-dark);
+    background-color: var(--bg-deep);
+    color: var(--text-pure);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
-/* Base Structural Layout Elements */
+/* Perfect Layout Constraints */
 .pcl-container {
     width: 100%;
-    max-width: 1280px;
+    max-width: 1240px;
     margin: 0 auto;
     padding: 0 24px;
 }
@@ -40,116 +41,328 @@ body {
     align-items: center;
 }
 
-/* System Grids */
-.pcl-grid { display: grid; gap: 24px; }
-.pcl-grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
-.pcl-grid-3 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+section {
+    display: block;
+    width: 100%;
+}
 
-/* Reusable Action Buttons */
+/* Standardized Layout Grids */
+.pcl-grid { 
+    display: grid; 
+    gap: 30px; 
+}
+.pcl-grid-4 { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.pcl-grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+
+/* Enterprise Action Buttons */
 .pcl-btn-fill {
     background-color: var(--brand-accent);
-    color: #FFFFFF;
+    color: var(--text-pure);
     padding: 14px 28px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-    transition: var(--transition-smooth);
+    gap: 10px;
     border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 4px 15px var(--brand-glow);
 }
 .pcl-btn-fill:hover {
-    background-color: #FFFFFF;
-    color: var(--brand-primary);
-    box-shadow: 0 6px 20px rgba(108, 63, 184, 0.2);
+    background-color: var(--text-pure);
+    color: var(--bg-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
 }
 
 .pcl-btn-outline {
-    border: 2px solid #FFFFFF;
-    color: #FFFFFF;
+    border: 2px solid var(--text-pure);
+    color: var(--text-pure);
     padding: 12px 26px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
     transition: var(--transition-smooth);
 }
 .pcl-btn-outline:hover {
-    background-color: #FFFFFF;
-    color: var(--brand-accent);
+    background-color: var(--text-pure);
+    color: var(--bg-deep);
 }
 
 .pcl-btn-accent {
     border: 2px solid var(--brand-accent) !important;
     color: var(--brand-accent) !important;
-    padding: 8px 18px !important;
+    padding: 10px 20px !important;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
+    transition: var(--transition-smooth);
 }
 .pcl-btn-accent:hover {
     background-color: var(--brand-accent) !important;
-    color: #FFFFFF !important;
+    color: var(--text-pure) !important;
+    box-shadow: 0 0 20px var(--brand-accent);
 }
 
 /* ==========================================================================
-   NAVIGATION & UTILITY HEADER
+   NAVIGATION HEADERS & UTILITY HUB
    ========================================================================== */
 .pcl-utility-strip {
-    background-color: #1A1524;
-    color: #B4AEC0;
+    background-color: #06040A;
+    color: var(--text-muted);
     font-size: 0.75rem;
-    padding: 10px 0;
-    border-bottom: 1px solid #282233;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-clean);
 }
 .strip-ticker i { color: var(--brand-accent); margin-right: 6px; }
 .strip-links a {
-    color: #B4AEC0;
+    color: var(--text-muted);
     text-decoration: none;
-    margin-left: 20px;
+    margin-left: 24px;
     transition: var(--transition-smooth);
 }
-.strip-links a:hover { color: #FFFFFF; }
+.strip-links a:hover { color: var(--text-pure); }
 
 .pcl-navbar {
-    background-color: var(--brand-primary);
+    background-color: var(--panel-dark);
     padding: 16px 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 3px solid #1A1524;
+    border-bottom: 1px solid var(--border-clean);
 }
-.pcl-brand { display: flex; align-items: center; }
+.pcl-brand a { display: block; text-decoration: none; }
 .pcl-custom-logo {
-    max-height: 55px;
+    max-height: 52px;
     width: auto;
     display: block;
     object-fit: contain;
-    
-    /* Blends out the white background pixels automatically from your PNG image */
     mix-blend-mode: screen;    
-    filter: brightness(1.2) contrast(1.1); /* Sharpens the purple and silver crest highlights */
+    filter: brightness(1.1) contrast(1.1);
 }
 .pcl-nav-links { display: flex; align-items: center; gap: 32px; }
 .pcl-nav-links a {
-    color: #E6E2ED;
+    color: var(--text-muted);
     text-decoration: none;
     font-weight: 600;
     font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.7px;
+    letter-spacing: 1px;
     transition: var(--transition-smooth);
 }
 .pcl-nav-links a:hover, .pcl-nav-links a.active {
-    color: var(--brand-accent);
+    color: var(--text-pure);
+    text-shadow: 0 0 10px var(--brand-accent);
 }
 
 /* ==========================================================================
-   HERO SEGMENTS & BILLBOARDS
+   HERO VEHICLES & SUB-HEADERS
    ========================================================================== */
 .pcl-stage-hero {
+    position: relative;
+    background: linear-gradient(rgba(9,6,14,0.45), rgba(9,6,14,0.95)), url('hero-bg.jpg') no-repeat center center/cover;
+    background-color: #0E081A;
+    padding: 180px 0;
+}
+.pcl-stage-content { max-width: 850px; }
+.pcl-badge-line {
+    color: var(--brand-accent);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 14px;
+}
+.pcl-stage-content h1 { font-size: 4rem; line-height: 1.1; margin-bottom: 20px; font-weight: 800; }
+.pcl-stage-content p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 36px; }
+.pcl-hero-actions { display: flex; gap: 16px; }
+
+.pcl-subpage-hero {
+    background: linear-gradient(135deg, #120D1A 0%, #06040A 100%);
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-clean);
+}
+.pcl-subpage-hero h1 { font-size: 2.4rem; text-transform: uppercase; font-weight: 800; letter-spacing: 1px; }
+
+/* ==========================================================================
+   METRICS DIRECTORY BLOCKS
+   ========================================================================== */
+.pcl-matrix-section { padding: 60px 0; background: var(--panel-dark); border-bottom: 1px solid var(--border-clean); }
+.matrix-headline h3 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 4px; }
+.matrix-headline p { color: var(--text-muted); margin-bottom: 32px; font-size: 1rem; }
+
+.pcl-matrix-card {
+    background: var(--bg-deep);
+    padding: 24px;
+    border: 1px solid var(--border-clean);
+    border-top: 3px solid var(--brand-accent);
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition-smooth);
+}
+.pcl-matrix-card:hover {
+    background: #171024;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--brand-glow);
+}
+.card-num { font-size: 2.5rem; font-weight: 800; color: var(--text-pure); display: block; margin-bottom: 2px; }
+.card-lbl { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--text-muted); display: flex; justify-content: space-between; align-items: center; }
+
+/* ==========================================================================
+   HOMEPAGE INTERACTIVE TABS & SECTORS
+   ========================================================================== */
+.pcl-tabs-section { padding: 80px 0; }
+.pcl-section-title h2 { font-size: 2rem; text-transform: uppercase; font-weight: 800; }
+.pcl-section-title p { color: var(--text-muted); font-size: 1rem; }
+.accent-bar { width: 60px; height: 4px; background-color: var(--brand-accent); margin: 16px 0 32px 0; }
+
+.pcl-tab-navigation-strip { display: flex; gap: 6px; background: var(--panel-dark); padding: 4px; border: 1px solid var(--border-clean); margin-bottom: 32px; }
+.tab-control-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 166px;
+    padding: 16px;
+    font-weight: 700;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    color: var(--text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: var(--transition-smooth);
+}
+.tab-control-btn.active, .tab-control-btn:hover {
+    background: var(--brand-accent);
+    color: #FFFFFF;
+}
+
+.pcl-tab-content-panel { display: none; }
+.pcl-tab-content-panel.active { display: block; }
+
+.tab-layout-grid { display: grid; grid-template-columns: 1fr 1fr; background: var(--panel-dark); border: 1px solid var(--border-clean); min-height: 360px; }
+.tab-visual-showcase { position: relative; }
+
+.visual-tint-shield { position: absolute; width:100%; height:100%; top:0; left:0; background: rgba(9, 6, 14, 0.45); padding: 40px; display: flex; flex-direction: column; justify-content: flex-end; }
+.panel-tag { color: var(--brand-accent); text-transform: uppercase; font-size: 0.75rem; font-weight: 700; margin-bottom: 6px; }
+.visual-tint-shield h3 { font-size: 1.4rem; font-weight: 800; text-transform: uppercase; }
+
+.tab-data-profile { padding: 40px; display: flex; flex-direction: column; justify-content: center; }
+.tab-data-profile h3 { font-size: 1.5rem; text-transform: uppercase; margin-bottom: 14px; font-weight: 800; }
+.tab-data-profile p { font-size: 0.95rem; color: var(--text-muted); }
+.tab-matrix-stats { display: flex; gap: 36px; margin: 24px 0; border-top: 1px solid var(--border-clean); border-bottom: 1px solid var(--border-clean); padding: 16px 0; }
+.matrix-stat-item strong { font-size: 1.5rem; color: var(--text-pure); display: block; font-weight: 800; }
+.matrix-stat-item small { color: var(--text-muted); text-transform: uppercase; font-weight: 600; font-size: 0.7rem; }
+.small-btn { align-self: flex-start; padding: 10px 20px; font-size: 0.75rem; }
+
+/* Portfolio Subpage Card Controls */
+.portfolio-item { background: var(--panel-dark); border: 1px solid var(--border-clean); overflow: hidden; transition: var(--transition-smooth); }
+.portfolio-item:hover { border-color: var(--brand-accent); transform: translateY(-3px); }
+.portfolio-img { width: 100%; height: 230px; min-height: 220px; object-fit: cover; display: block; }
+.portfolio-meta { padding: 24px; }
+.portfolio-meta .tag { background: var(--brand-accent); color: #FFFFFF; font-size: 0.7rem; padding: 4px 10px; text-transform: uppercase; font-weight: 700; display: inline-block; margin-bottom: 12px; }
+.portfolio-meta h3 { font-size: 1.25rem; margin-bottom: 6px; text-transform: uppercase; }
+.portfolio-meta p { color: var(--text-muted); font-size: 0.9rem; }
+.portfolio-specs { display: flex; justify-content: space-between; border-top: 1px solid var(--border-clean); margin-top: 14px; padding-top: 12px; font-size: 0.8rem; color: var(--text-muted); }
+
+/* ==========================================================================
+   EXPERT SPECIFICATION MODULES (INNER PAGES)
+   ========================================================================== */
+.spec-container { padding: 60px 0; width: 100%; }
+.spec-box { background: var(--panel-dark); border: 1px solid var(--border-clean); border-top: 4px solid var(--brand-accent); padding: 48px; }
+.spec-box h2 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 10px; }
+.spec-box > p { color: var(--text-muted); font-size: 1.05rem; margin-bottom: 32px; }
+
+.spec-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+.spec-item { background: var(--bg-deep); padding: 24px; border: 1px solid var(--border-clean); transition: var(--transition-smooth); }
+.spec-item:hover { border-color: var(--brand-accent); transform: translateY(-2px); }
+.spec-item h4 { font-size: 1.1rem; text-transform: uppercase; margin-bottom: 10px; color: var(--text-pure); font-weight: 700; border-bottom: 2px solid var(--brand-accent); width: fit-content; padding-bottom: 3px; }
+.spec-item p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 0; }
+
+/* ==========================================================================
+   AUDIT DECK LABELS & SIDEBAR STACKS
+   ========================================================================== */
+.pcl-workspace { padding: 60px 0; width: 100%; }
+.pcl-workspace-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; }
+
+.pcl-audit-panel { background: var(--panel-dark); padding: 48px; border: 1px solid var(--border-clean); border-left: 6px solid var(--brand-accent); }
+.pcl-audit-panel h2 { font-size: 1.8rem; text-transform: uppercase; font-weight: 800; margin-bottom: 10px; }
+.pcl-audit-panel > p { color: var(--text-muted); margin-bottom: 30px; font-size: 1.05rem; }
+
+.pcl-node-stack { display: flex; flex-direction: column; gap: 18px; }
+.pcl-node { background: var(--bg-deep); padding: 22px; border: 1px solid var(--border-clean); }
+.pcl-node h4 { font-size: 1.15rem; color: var(--text-pure); text-transform: uppercase; margin-bottom: 6px; font-weight: 700; }
+.pcl-node p { margin-bottom: 0; font-size: 0.9rem; color: var(--text-muted); }
+
+.pcl-sidebar-widget { background: var(--panel-dark); border: 1px solid var(--border-clean); padding: 24px; border-top: 4px solid var(--brand-accent); }
+.pcl-sidebar-widget h3 { font-size: 1rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 18px; font-weight: 700; }
+.pcl-sidebar-widget ul { list-style: none; }
+.pcl-sidebar-widget ul li { margin-bottom: 12px; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 0.9rem; color: var(--text-pure); }
+.pcl-sidebar-widget ul li i { color: var(--brand-accent); }
+
+/* Procurement Portal Layout Inputs */
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 24px; }
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full-width { grid-column: span 2; }
+.form-group label { font-weight: 700; font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); }
+.form-grid input, .form-grid select, .form-grid textarea {
+    padding: 12px;
+    border: 1px solid var(--border-clean);
+    background: var(--bg-deep);
+    font-size: 0.95rem;
+    color: var(--text-pure);
+}
+.form-grid input:focus, .form-grid select:focus, .form-grid textarea:focus {
+    border-color: var(--brand-accent);
+    outline: none;
+    background: #150E22;
+}
+
+/* ==========================================================================
+   PRODUCTION LOCAL IMAGE ROUTING MATRIX (OUR EXPERTISE INTEGRATION)
+   ========================================================================== */
+
+/* --- THUMBNAIL LAYOUT PIPELINES (HOMEPAGE TABS GRIDS) --- */
+.civic-bg { background: linear-gradient(rgba(18,13,26,0.4), rgba(18,13,26,0.75)), url('viaduct-thumb.jpg') no-repeat center center/cover; min-height: 360px; }
+.commercial-bg { background: linear-gradient(rgba(18,13,26,0.4), rgba(18,13,26,0.75)), url('skyscraper-thumb.jpg') no-repeat center center/cover; min-height: 360px; }
+.industrial-bg { background: linear-gradient(rgba(18,13,26,0.4), rgba(18,13,26,0.75)), url('refinery-thumb.jpg') no-repeat center center/cover; min-height: 360px; }
+.estate-bg { background: linear-gradient(rgba(18,13,26,0.4), rgba(18,13,26,0.75)), url('estate-thumb.jpg') no-repeat center center/cover; min-height: 360px; }
+
+/* --- HERO HIGH-RES CASE STUDY BACKGROUNDS --- */
+.hero-viaduct-luxe { background: linear-gradient(rgba(18,13,26,0.65), rgba(18,13,26,0.95)), url('viaduct-hero.jpg') no-repeat center center/cover !important; }
+.hero-skyscraper-luxe { background: linear-gradient(rgba(18,13,26,0.65), rgba(18,13,26,0.95)), url('skyscraper-hero.jpg') no-repeat center center/cover !important; }
+.hero-refinery-luxe { background: linear-gradient(rgba(18,13,26,0.65), rgba(18,13,26,0.95)), url('refinery-hero.jpg') no-repeat center center/cover !important; }
+.hero-estate-luxe { background: linear-gradient(rgba(18,13,26,0.65), rgba(18,13,26,0.95)), url('estate-hero.jpg') no-repeat center center/cover !important; }
+
+/* ==========================================================================
+   HEAVY INDUSTRIAL FOOTER SYSTEM
+   ========================================================================== */
+.pcl-footer { background-color: #06040A; color: var(--text-muted); padding: 60px 0 0 0; font-size: 0.85rem; border-top: 1px solid var(--border-clean); }
+.pcl-footer h3 { color: var(--text-pure); font-weight: 800; margin-bottom: 12px; }
+.pcl-footer h4 { color: var(--text-pure); text-transform: uppercase; font-size: 0.75rem; letter-spacing: 1px; margin-bottom: 16px; }
+.footer-links-col a { color: var(--text-muted); text-decoration: none; display: block; margin-bottom: 8px; transition: var(--transition-smooth); }
+.footer-links-col a:hover { color: var(--brand-accent); padding-left: 2px; }
+.contact-email { color: var(--text-pure); font-weight: 700; margin-top: 12px; }
+.pcl-footer-base { background: #030205; padding: 24px 0; margin-top: 40px; font-size: 0.75rem; border-top: 1px solid var(--border-clean); }
+.footer-socials a { color: var(--text-muted); margin-left: 12px; font-size: 1rem; }
+.footer-socials a:hover { color: var(--brand-accent); }
+
+@media (max-width: 992px) {
+    .pcl-workspace-grid, .tab-layout-grid, .form-grid { grid-template-columns: 1fr; }
+    .form-group.full-width { grid-column: span 1; }
+}
+@media (max-width: 768px) {
+    .row { flex-direction: column; gap: 12px; text-align: center; }
+    .pcl-nav-links { flex-wrap: wrap; justify-content: center; gap: 12px; }
+}

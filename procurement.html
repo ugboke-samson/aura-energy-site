@@ -4,13 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Procurement Tenders & Subcontracting Registry | RAYTON</title>
+    
     <link rel="stylesheet" href="styles.css">
+    
+    <link rel="icon" type="image/png" href="mylogo.png">
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+
+    <div class="pcl-utility-strip">
+        <div class="pcl-container row">
+            <div class="strip-ticker">
+                <span><i class="fa-solid fa-helmet-safety"></i> Portal Status: Secure Encryption Active</span>
+            </div>
+            <div class="strip-links">
+                <a href="portfolio.html">Global Projects</a>
+                <a href="sustainability.html">ESG Impact</a>
+            </div>
+        </div>
+    </div>
+
     <header class="pcl-navbar">
         <div class="pcl-container row">
-            <div class="pcl-brand"><img src="mylogo.png" alt="RAYTON GROUP Logo" class="pcl-custom-logo"></div>
+            <div class="pcl-brand">
+                <a href="index.html">
+                    <img src="mylogo.png" alt="RAYTON GROUP Logo" class="pcl-custom-logo">
+                </a>
+            </div>
             <nav class="pcl-nav-links">
                 <a href="index.html">Home</a>
                 <a href="cap-civil.html">Our Expertise</a>
@@ -21,49 +42,103 @@
         </div>
     </header>
 
-    <section class="pcl-subpage-hero"><div class="pcl-container"><h1>Vendor Procurement Hub</h1></div></section>
+    <section class="pcl-subpage-hero">
+        <div class="pcl-container">
+            <h1>Vendor Procurement Hub</h1>
+        </div>
+    </section>
 
     <section class="pcl-workspace">
         <div class="pcl-container">
             <div class="pcl-audit-panel">
                 <h2>Subcontractor Pre-Qualification Dossier</h2>
-                <p>Register your firm directly below to gain immediate access to active industrial material bids and project site sub-tenders.</p>
+                <p>Submit your enterprise details below. Verified entries will route into our corporate tracking logs for upcoming structural bid rounds.</p>
                 
-                <form action="#" method="POST" class="form-grid">
+                <form action="https://formspree.io/f/xdavjqgv" method="POST" class="form-grid">
+                    
                     <div class="form-group">
-                        <label for="comp-name">Legal Entity Name</label>
-                        <input type="text" id="comp-name" required placeholder="e.g., Global Aggregate Logistics Ltd">
+                        <label for="company_name">Legal Entity Name</label>
+                        <input type="text" id="company_name" name="company_name" required placeholder="e.g., Global Aggregate Logistics Ltd">
                     </div>
+                    
                     <div class="form-group">
-                        <label for="tax-id">Tax Identification ID</label>
-                        <input type="text" id="tax-id" required placeholder="e.g., RC-98765432">
+                        <label for="tax_id">Tax Identification ID</label>
+                        <input type="text" id="tax_id" name="tax_id" required placeholder="e.g., RC-98765432">
                     </div>
+                    
                     <div class="form-group">
-                        <label for="division">Primary Operating Division</label>
-                        <select id="division" required>
+                        <label for="operating_division">Primary Operating Division</label>
+                        <select id="operating_division" name="operating_division" required>
                             <option value="">Select Division Spec...</option>
-                            <option value="civil">Heavy Structural Concrete</option>
-                            <option value="steel">Mechanical Steel Framing</option>
-                            <option value="logistics">Haulage & Fleet Supply</option>
+                            <option value="Real Estate">Real Estate & Smart Buildings</option>
+                            <option value="Heavy Civil">Heavy Structural Concrete & Civil</option>
+                            <option value="Commercial Tower">Commercial Glass & Framing</option>
+                            <option value="Industrial Process">Industrial Pipeline & Refineries</option>
                         </select>
                     </div>
+                    
                     <div class="form-group">
-                        <label for="insurance">Liability Insurance Cap Value</label>
-                        <select id="insurance" required>
-                            <option value="2m">$2,000,000 Minimum Cap</option>
-                            <option value="5m">$5,000,000 Standard Tier</option>
+                        <label for="insurance_cap">Liability Insurance Cap Value</label>
+                        <select id="insurance_cap" name="insurance_cap" required>
+                            <option value="">Select Minimum Coverage...</option>
+                            <option value="$2M Minimum Cap">$2,000,000 Minimum Cap</option>
+                            <option value="$5M Standard Tier">$5,000,000 Standard Tier</option>
+                            <option value="$10M+ Enterprise Tier">$10,000,000+ Enterprise Tier</option>
                         </select>
                     </div>
+                    
                     <div class="form-group full-width">
-                        <label for="fleet-desc">Equipment Inventory & Certifications Summary</label>
-                        <textarea id="fleet-desc" rows="4" placeholder="Detail your heavy asset availability, safety tracks, and compliance history..."></textarea>
+                        <label for="equipment_inventory">Equipment Inventory Summary & Safety Records</label>
+                        <textarea id="equipment_inventory" name="equipment_inventory" rows="4" required placeholder="Detail your heavy asset availability, safety tracks, and mechanical capacities..."></textarea>
                     </div>
+                    
+                    <input type="hidden" name="_subject" value="New Subcontractor Prequalification Entry">
+                    
                     <div class="form-group full-width" style="margin-top: 12px;">
-                        <button type="submit" class="pcl-btn-fill" style="width: fit-content;">Submit Dossier <i class="fa-solid fa-paper-plane"></i></button>
+                        <button type="submit" class="pcl-btn-fill" style="width: fit-content; cursor: pointer;">
+                            Submit Dossier <i class="fa-solid fa-paper-plane" style="font-size: 0.8rem;"></i>
+                        </button>
                     </div>
+                    
                 </form>
             </div>
         </div>
     </section>
+
+    <footer class="pcl-footer">
+        <div class="pcl-container pcl-grid pcl-grid-4">
+            <div class="footer-summary">
+                <h3>RAYTON</h3>
+                <p>An employee-owned company bringing century-long engineering execution to international mega-builds.</p>
+            </div>
+            <div class="footer-links-col">
+                <h4>Markets</h4>
+                <a href="cap-civil.html">Civil Infrastructure</a>
+                <a href="cap-commercial.html">Commercial Towers</a>
+                <a href="cap-industrial.html">Heavy Industrial Plants</a>
+                <a href="cap-estate.html">Real Estate Buildings</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Supply Chain</h4>
+                <a href="procurement.html">Active Bid Opportunities</a>
+                <a href="procurement.html">Vendor Registration Dossier</a>
+            </div>
+            <div class="footer-links-col">
+                <h4>Corporate</h4>
+                <p>75 Architectural Boulevard, Suite 100<br>Commercial Hub, Corporate Core</p>
+                <p class="contact-email">projects@raytonconstruction.com</p>
+            </div>
+        </div>
+        <div class="pcl-footer-base">
+            <div class="pcl-container row">
+                <p>&copy; 2026 RAYTON Construction Group. All rights reserved.</p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
 </html>
